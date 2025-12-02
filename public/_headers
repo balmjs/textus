@@ -1,0 +1,52 @@
+# Headers for Netlify/Cloudflare Pages
+# Security and Performance Optimizations
+
+/*
+  # Security Headers
+  X-Frame-Options: SAMEORIGIN
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  
+  # CORS (if needed)
+  # Access-Control-Allow-Origin: *
+  
+  # Cache Control for HTML
+  Cache-Control: no-cache, must-revalidate
+
+# Cache static assets
+/assets/*
+  Cache-Control: max-age=31536000, public, immutable
+
+# Cache images
+/*.jpg
+  Cache-Control: max-age=31536000, public, immutable
+/*.jpeg
+  Cache-Control: max-age=31536000, public, immutable
+/*.png
+  Cache-Control: max-age=31536000, public, immutable
+/*.gif
+  Cache-Control: max-age=31536000, public, immutable
+/*.webp
+  Cache-Control: max-age=31536000, public, immutable
+/*.svg
+  Cache-Control: max-age=31536000, public, immutable
+/*.ico
+  Cache-Control: max-age=31536000, public, immutable
+
+# Cache fonts
+/*.woff
+  Cache-Control: max-age=31536000, public, immutable
+/*.woff2
+  Cache-Control: max-age=31536000, public, immutable
+/*.ttf
+  Cache-Control: max-age=31536000, public, immutable
+/*.otf
+  Cache-Control: max-age=31536000, public, immutable
+
+# Cache CSS and JS
+/*.css
+  Cache-Control: max-age=2592000, public
+/*.js
+  Cache-Control: max-age=2592000, public

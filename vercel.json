@@ -1,0 +1,20 @@
+{
+  "buildCommand": "pnpm build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "env": {
+    "TURSO_DATABASE_URL": "@turso_database_url",
+    "TURSO_AUTH_TOKEN": "@turso_auth_token",
+    "AUTH_ENABLED": "@auth_enabled",
+    "AUTH_USERNAME": "@auth_username",
+    "AUTH_PASSWORD": "@auth_password",
+    "AUTH_SECRET": "@auth_secret",
+    "AUTH_REQUIRED_FOR_READ": "@auth_required_for_read"
+  },
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api"
+    }
+  ]
+}

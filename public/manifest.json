@@ -1,0 +1,34 @@
+{
+  "name": "Textus – The Successor to Bookmarks",
+  "short_name": "Textus",
+  "description": "Textus is the true successor to browser bookmarks. Beautiful, shareable, cloud-powered visual startpages that finally replace the chaotic 30-year-old bookmark system.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0288D1",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/textus.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "shortcuts": [
+    {
+      "name": "Home",
+      "short_name": "Home",
+      "description": "Open Textus homepage",
+      "url": "/",
+      "icons": [
+        {
+          "src": "/textus.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+# Robots.txt for Textus - The Successor to Bookmarks
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: /sitemap.xml
+
+# Crawl delay (optional, helps prevent server overload)
+Crawl-delay: 1
+
+# Disallow specific paths if needed (uncomment if necessary)
+# Disallow: /api/
+# Disallow: /admin/
+# Disallow: /*.json$
