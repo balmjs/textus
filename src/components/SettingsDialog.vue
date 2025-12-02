@@ -134,7 +134,7 @@
                   <div class="text-subtitle-1 font-weight-medium mb-3">Links</div>
                   <div class="d-flex flex-wrap ga-2">
                     <v-btn
-                      href="https://github.com/superwebmaker/textus"
+                      href="https://github.com/balmjs/textus"
                       target="_blank"
                       variant="outlined"
                       size="small"
@@ -143,7 +143,7 @@
                       GitHub
                     </v-btn>
                     <v-btn
-                      href="https://github.com/superwebmaker/textus/blob/main/README.md"
+                      href="https://github.com/balmjs/textus/blob/main/README.md"
                       target="_blank"
                       variant="outlined"
                       size="small"
@@ -152,7 +152,7 @@
                       Documentation
                     </v-btn>
                     <v-btn
-                      href="https://github.com/superwebmaker/textus/issues"
+                      href="https://github.com/balmjs/textus/issues"
                       target="_blank"
                       variant="outlined"
                       size="small"

@@ -25,7 +25,7 @@ Thank you for your interest in contributing to Textus! This document provides gu
 
 ```bash
 # Fork the repository on GitHub, then:
-git clone https://github.com/superwebmaker/textus.git
+git clone https://github.com/balmjs/textus.git
 cd textus
 ```
 

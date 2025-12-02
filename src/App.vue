@@ -20,7 +20,7 @@
         <v-btn
           icon
           variant="text"
-          href="https://github.com/superwebmaker/textus"
+          href="https://github.com/balmjs/textus"
           target="_blank"
           rel="noopener noreferrer"
           title="View on GitHub"

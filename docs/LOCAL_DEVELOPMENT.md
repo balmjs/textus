@@ -488,7 +488,7 @@ If you encounter issues:
 1. Check the [Troubleshooting](#troubleshooting) section
 2. Check terminal error messages
 3. Check browser console errors
-4. Submit an [Issue](https://github.com/superwebmaker/textus/issues)
+4. Submit an [Issue](https://github.com/balmjs/textus/issues)
 
 ---
 

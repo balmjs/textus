@@ -301,4 +301,4 @@ MIT License - feel free to use this project for personal or commercial purposes.
 
 **Made with ❤️ and ☕ by the Textus community**
 
-_Need help? Found a bug? [Open an issue](https://github.com/superwebmaker/textus/issues)_
+_Need help? Found a bug? [Open an issue](https://github.com/balmjs/textus/issues)_
