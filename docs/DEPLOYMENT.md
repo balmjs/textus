@@ -25,7 +25,7 @@ wrangler login
 ### Step 3: Create Pages Project
 
 ```bash
-wrangler pages create textus
+wrangler pages project create textus
 ```
 
 ### Step 4: Configure Environment Variables

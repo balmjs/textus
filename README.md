@@ -131,7 +131,7 @@ wrangler login
 3. **Create a new Pages project:**
 
 ```bash
-wrangler pages create textus
+wrangler pages project create textus
 ```
 
 4. **Set environment variables in Cloudflare Dashboard:**
