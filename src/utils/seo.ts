@@ -162,7 +162,7 @@ export function addWebSiteStructuredData(config: SEOConfig): void {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: config.title || 'Textus',
-    description: config.description || 'Successor to bookmarks',
+    description: config.description || 'Modern bookmark management',
     url: config.url || window.location.origin,
     potentialAction: {
       '@type': 'SearchAction',
@@ -185,7 +185,9 @@ export function addWebApplicationStructuredData(config: SEOConfig): void {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: config.title || 'Textus',
-    description: config.description || 'Successor to bookmarks - Modern bookmark management',
+    description:
+      config.description ||
+      'Textus is the modern successor to browser bookmarks. Beautiful, shareable, visual startpages and personal dashboards to organize, manage and share your links.',
     url: config.url || window.location.origin,
     applicationCategory: 'ProductivityApplication',
     operatingSystem: 'Web Browser',

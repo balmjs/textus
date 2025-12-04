@@ -4,7 +4,7 @@
     <div class="search-area w-100 px-6 py-4 flex-shrink-0 border-b-retro">
       <v-text-field
         v-model="searchQuery"
-        placeholder="> SEARCH_PROTOCOL..."
+        :placeholder="dailyPlaceholder"
         variant="outlined"
         density="compact"
         hide-details
@@ -71,6 +71,25 @@ import SiteDialog from '@/components/SiteDialog.vue';
 import ImportDialog from '@/components/ImportDialog.vue';
 import type { Group, Site, GroupWithSites } from '@/types';
 import { exportData } from '@/utils/api';
+import { placeholders } from '@/config';
+
+function setDailyPlaceholder() {
+  const today = new Date().toISOString().slice(0, 10);
+  const stored = localStorage.getItem('dailyPlaceholder');
+
+  let placeholder;
+  if (stored) {
+    const [date, text] = stored.split('|');
+    placeholder =
+      date === today ? text : placeholders[Math.floor(Math.random() * placeholders.length)];
+  } else {
+    placeholder = placeholders[Math.floor(Math.random() * placeholders.length)];
+  }
+
+  localStorage.setItem('dailyPlaceholder', `${today}|${placeholder}`);
+  return placeholder;
+}
+const dailyPlaceholder = setDailyPlaceholder();
 
 const authStore = useAuthStore();
 const navStore = useNavigationStore();

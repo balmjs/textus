@@ -95,7 +95,7 @@
                 <v-card-text>
                   <div class="text-h6 mb-2">✨ Textus</div>
                   <div class="text-body-2 text-medium-emphasis mb-4">
-                    Successor to bookmarks, 1994–2025
+                    Weave your web. Build your hive.
                   </div>
                   <v-divider class="my-3" />
                   <div class="d-flex flex-column ga-2">
@@ -262,13 +262,13 @@ const handleSave = async () => {
       // 立即更新所有 SEO meta 标签
       const logoUrl = `${window.location.origin}/textus.svg`;
       updateAllSEOMeta({
-        title: configs.value.siteTitle || 'Textus – The Successor to Bookmarks',
+        title: configs.value.siteTitle || 'Textus',
         description:
           configs.value.siteDescription ||
           'Textus is the true successor to browser bookmarks. Beautiful, shareable, cloud-powered visual startpages that finally replace the chaotic 30-year-old bookmark system.',
         keywords:
           configs.value.siteKeywords ||
-          'Textus, bookmark alternative, visual bookmarks, startpage, personal dashboard, aesthetic homepage, link in bio, bookmark manager 2.0, new tab page, successor to bookmarks',
+          'Textus, bookmark alternative, visual bookmarks, startpage, personal dashboard, aesthetic homepage, link in bio, bookmark manager 2.0, new tab page',
         image: logoUrl,
         url: window.location.origin,
       });
