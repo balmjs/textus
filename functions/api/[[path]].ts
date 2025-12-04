@@ -1,9 +1,23 @@
 // Cloudflare Pages Functions API handler
 import { createDbClient } from '../../server/db/client';
 import { NavigationService } from '../../server/api/service';
-import { jsonResponse, errorResponse, successResponse, getCorsHeaders } from '../../server/utils/response';
-import { validateRequestBody, validateExportData, RateLimiter } from '../../server/utils/validation';
-import type { LoginRequest, ExportData, GroupOrderUpdate, SiteOrderUpdate } from '../../server/types';
+import {
+  jsonResponse,
+  errorResponse,
+  successResponse,
+  getCorsHeaders,
+} from '../../server/utils/response';
+import {
+  validateRequestBody,
+  validateExportData,
+  RateLimiter,
+} from '../../server/utils/validation';
+import type {
+  LoginRequest,
+  ExportData,
+  GroupOrderUpdate,
+  SiteOrderUpdate,
+} from '../../server/types';
 
 const loginRateLimiter = new RateLimiter(5, 15);
 
@@ -19,15 +33,13 @@ interface Env {
 
 function getClientIP(request: Request): string {
   return (
-    request.headers.get('CF-Connecting-IP') ||
-    request.headers.get('X-Forwarded-For') ||
-    'unknown'
+    request.headers.get('CF-Connecting-IP') || request.headers.get('X-Forwarded-For') || 'unknown'
   );
 }
 
 function getAuthToken(request: Request): string | null {
   const cookieHeader = request.headers.get('Cookie');
-  
+
   if (cookieHeader) {
     const cookies = cookieHeader.split(';').reduce(
       (acc, cookie) => {
@@ -78,6 +90,7 @@ export const onRequest: PagesFunction<Env> = async (context) => {
     const url = new URL(request.url);
     // Normalize path: remove /api prefix and trailing slashes
     const path = url.pathname.replace(/^\/api\/?/, '').replace(/\/$/, '');
+    const pathParts = path.split('/').filter(Boolean);
     const method = request.method;
 
     // Health check endpoint
@@ -106,21 +119,16 @@ export const onRequest: PagesFunction<Env> = async (context) => {
       if (result.success && result.token) {
         const maxAge = body.rememberMe ? 30 * 24 * 60 * 60 : 7 * 24 * 60 * 60;
 
-        return jsonResponse(
-          { success: true, message: result.message },
-          request,
-          200,
-          {
-            'Set-Cookie': [
-              `auth_token=${result.token}`,
-              'HttpOnly',
-              'Secure',
-              'SameSite=Strict',
-              `Max-Age=${maxAge}`,
-              'Path=/',
-            ].join('; '),
-          }
-        );
+        return jsonResponse({ success: true, message: result.message }, request, 200, {
+          'Set-Cookie': [
+            `auth_token=${result.token}`,
+            'HttpOnly',
+            'Secure',
+            'SameSite=Strict',
+            `Max-Age=${maxAge}`,
+            'Path=/',
+          ].join('; '),
+        });
       }
 
       return jsonResponse(result, request, result.success ? 200 : 401);
@@ -128,21 +136,16 @@ export const onRequest: PagesFunction<Env> = async (context) => {
 
     // Logout endpoint
     if (path === 'logout' && method === 'POST') {
-      return jsonResponse(
-        { success: true, message: 'Logged out successfully' },
-        request,
-        200,
-        {
-          'Set-Cookie': [
-            'auth_token=',
-            'HttpOnly',
-            'Secure',
-            'SameSite=Strict',
-            'Max-Age=0',
-            'Path=/',
-          ].join('; '),
-        }
-      );
+      return jsonResponse({ success: true, message: 'Logged out successfully' }, request, 200, {
+        'Set-Cookie': [
+          'auth_token=',
+          'HttpOnly',
+          'Secure',
+          'SameSite=Strict',
+          'Max-Age=0',
+          'Path=/',
+        ].join('; '),
+      });
     }
 
     // Auth status endpoint
